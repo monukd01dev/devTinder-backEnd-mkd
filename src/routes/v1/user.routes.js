@@ -1,5 +1,5 @@
 const express = require('express');
-const UserController = require('../../controllers/user.Controller');
+const UserController = require('../../controllers/user.controller');
 const userRouter = express.Router();
 
 userRouter.get('/feed', UserController.userFeed)
