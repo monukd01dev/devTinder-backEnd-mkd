@@ -38,8 +38,9 @@ app.use('/api', apiLimiter);
 // ==========================================
 // 2. CORS (VIP GUEST LIST)
 // ==========================================
+const envOrigins = process.env.FRONTEND_URLS ? process.env.FRONTEND_URLS.split(',') : [];
 const allowedOrigins = [
-  process.env.FRONTEND_URL, // Tera Azure IP ya production domain
+  ...envOrigins, // Tera Azure IP ya production domain ya jitni bhi jagha tera ui hai unka origin
   "http://localhost:5173",  // Local development
   "http://127.0.0.1:5173"
 ];
